@@ -1,5 +1,17 @@
 ---
 import CustomLayout from '../layouts/CustomLayout.astro';
+
+
+// api wp
+const date = await fetch('https://enzo.cdui-formasup.fr/wp-json/wp/v2/posts?_embed');
+const posts = await date.json();
+
+
+
+
+
+
+
 ---
 
 
@@ -16,5 +28,33 @@ description="découvrez tous nos services"
 	<!-- section hero -->
 	<h1>coucou</h1>
 
+	<!-- une section avec des cards pour autant d'articles que le wp en contient -->
+
+	<!-- APPELER L'API WP EN GET POUR LE LISTING DE TOUS LES ARTICLES
+	TOUS LES ARTICLES SONT STOCKES DANS UNE VARIABLES CELA VA RETOURNER UN TABLEAU DE DONNEES
+	
+	POUR LE TABLEAU -> IL VA FALLOIR FAIRE UNE BOUCLE
+	MAP()
+	
+	-->
+
+	<ul>
+        <!-- créer un li pour chaque article -->
+         {
+            posts.map((post: any) => (
+                <li>
+                    {
+                        post._embedded['wp:featuredmedia'] && (
+                            <img src={post._embedded['wp:featuredmedia'][0].source_url} alt={post._embedded['wp:featuredmedia'][0].alt_text} />
+                        )
+                    }
+                    <h2 class="title">{post.title.rendered}</h2>
+                    <span>
+                        Lire l'article
+                    </span>
+                </li>
+            ))
+         }
+     </ul>
 
 </CustomLayout>

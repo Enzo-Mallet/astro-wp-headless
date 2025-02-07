@@ -16,5 +16,35 @@ description="découvrez tous nos services"
 	<!-- section hero -->
 	<h1>bonsoir</h1>
 
+		<!-- Bannière -->
+		<div class="w-full h-64 bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('https://source.unsplash.com/random/1600x900');">
+			<h1 class="text-4xl font-bold">Nos Coordonnées</h1>
+		</div>
+		
+		<!-- Formulaire de contact -->
+		<section class="w-full max-w-lg mt-8 p-6 bg-gray-100 rounded-lg shadow-md">
+			<form class="flex flex-col gap-4">
+				<label class="block">
+					<span class="text-gray-700">Nom</span>
+					<input type="text" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Votre nom">
+				</label>
+				<label class="block">
+					<span class="text-gray-700">Email</span>
+					<input type="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Votre email">
+				</label>
+				<button type="submit" class="mt-4 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Envoyer</button>
+			</form>
+		</section>
+	
+		<!-- Section avec deux colonnes -->
+		<section class="w-full max-w-4xl mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+			<div>
+				<img src="https://source.unsplash.com/random/400x300" alt="Illustration" class="w-full rounded-lg shadow-md">
+			</div>
+			<div>
+				<h2 class="text-2xl font-semibold">Nous Contacter</h2>
+				<p class="mt-4 text-gray-600">N'hésitez pas à nous contacter pour toute question ou information supplémentaire. Nous sommes à votre disposition.</p>
+			</div>
+		</section>
 
 </CustomLayout>
