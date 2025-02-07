@@ -3,17 +3,48 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+
+// on peut faire du js 
+// appeler l'api, utiliser la fonction FETCH() 
+const data = await fetch('https://enzo.cdui-formasup.fr/wp-json/wp/v2/posts/580?_embed');
+const post = await data.json();
+console.log(post)
+
+
+
 ---
+
+
+
+
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+		{	
+		post.title.rendered
+		}
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1 class="bg-red-500 text-9xl font-bold text-white">HELLO WORLD</h1>
+			<h1 class="text-9xl font-bold text-white">WORDPRESS HEADLESS</h1>
+
+<!-- afficher un truc de mon backend wordpress -->
+
+<!-- Me connecter a mon backend wordpress avec l'api de wordpress nom_de_domaine/wp-json/wp/v2/posts
+
+https://enzo.cdui-formasup.fr/wp-json/wp/v2/posts/580?_embed
+-->
+
+
+
+
+
 		</main>
 		<Footer />
 	</body>
