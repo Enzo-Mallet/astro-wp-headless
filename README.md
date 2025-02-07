@@ -1,1 +1,1 @@
-# astro-wp-headless
+# SUPER astro-wp-headless
